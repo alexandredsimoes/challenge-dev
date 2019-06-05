@@ -7,8 +7,9 @@ namespace Wappa.Infrastructure.Data.Models
 {
     public class Driver
     {
-        [BsonId]
+        
         [BsonRepresentation(BsonType.ObjectId)]
+        //[BsonId(IdGenerator = typeof(long))]
         public string Id { get; protected set; }
 
         public string FirstName { get; protected set; }
@@ -26,7 +27,7 @@ namespace Wappa.Infrastructure.Data.Models
                       double longitude,
                       Vehicle vehicle)
         {
-            Id = id ?? throw new ArgumentNullException(nameof(id));
+            //Id = id ?? throw new ArgumentNullException(nameof(id));
             FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
             LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
             Address = address ?? throw new ArgumentNullException(nameof(address));

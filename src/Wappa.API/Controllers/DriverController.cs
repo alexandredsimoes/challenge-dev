@@ -57,7 +57,10 @@ namespace Wappa.API.Controllers
             driverViewModel.Latitude = latlong.latitude;
             driverViewModel.Longitude = latlong.longitude;
 
-            await _driverRepository.Create(_mapper.Map<Driver>(driverViewModel));
+            await _driverRepository.Create(_mapper.Map<Driver>(driverViewModel, opts =>
+            {
+                
+            }));
             return new OkObjectResult(driverViewModel);
         }
 
